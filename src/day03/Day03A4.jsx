@@ -20,9 +20,9 @@ export default class Day03A4 extends React.PureComponent {
         // console.dir(prevState);
 
         // 조건에 따라 특정 값 동기화
-        if(nextProps.value !== prevState.value) {
-          return { count: nextProps.value };
-        }
+        // if(nextProps.value !== prevState.count) {
+        //   return { count: nextProps.value };
+        // }
 
         // state를 변경할 필요가 없다면 null을 반환
         return null;
@@ -32,7 +32,7 @@ export default class Day03A4 extends React.PureComponent {
         console.log("componentDidMount() ==========> ");
 
     }
-
+    
     render() {
         console.log("render() ==========> ");
     
@@ -40,6 +40,7 @@ export default class Day03A4 extends React.PureComponent {
             <li>props.title = {this.props.title}</li>
             <li>props.name = {this.props.name}</li>
             <li>props.value = {this.props.value}</li>
+            <li>state.count = {this.state.count}</li>
         </ul>;
     }
 }
