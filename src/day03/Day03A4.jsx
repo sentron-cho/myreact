@@ -1,46 +1,15 @@
-
 import React from 'react';
 
-// 컴포넌트 생명 주기 확인
+// React 안의 Component 또는 PureComponent 상속하여 컴포넌트(클래스) 생성
 export default class Day03A4 extends React.PureComponent {
-    state = {
-        count: 0
-    }
-
-    constructor(props) {
-        console.log("constructor() ==========> ");
-        super(props);
-
-        // console.dir(props);
-    }
-
-    static getDerivedStateFromProps(nextProps, prevState) {
-        console.log("getDerivedStateFromProps() ==========> ");
-        // console.dir(nextProps);
-        // console.dir(prevState);
-
-        // 조건에 따라 특정 값 동기화
-        // if(nextProps.value !== prevState.count) {
-        //   return { count: nextProps.value };
-        // }
-
-        // state를 변경할 필요가 없다면 null을 반환
-        return null;
-    }
-
-    componentDidMount() {
-        console.log("componentDidMount() ==========> ");
-
-    }
-    
+     // DOM을 만들어 결과를 반환한다.
     render() {
         console.log("render() ==========> ");
+        // this.props = { title: "저의 이름은", name: "홍길동" }
+        console.dir(this.props);
     
-        return <ul>
-            <li>props.title = {this.props.title}</li>
-            <li>props.name = {this.props.name}</li>
-            <li>props.value = {this.props.value}</li>
-            <li>state.count = {this.state.count}</li>
-        </ul>;
+        return <h1>
+            {this.props.title} 이름은 {this.props.name} 입니다.
+        </h1>;
     }
 }
