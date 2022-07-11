@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export default class Day04A2 extends React.PureComponent {
+export default class Day04A2 extends React.Component {
     constructor(props) {
         super(props);
         this.state = { count: 0 };
@@ -27,6 +27,10 @@ export default class Day04A2 extends React.PureComponent {
         return <div>
             <h3>카운트 : {this.state.count}</h3>
             <button type='button' onClick={this.onButtonClick}>클릭하세요</button>
+            <div onClick={this.onButtonClick}>DIV 클릭</div>
+            <span onClick={this.onButtonClick}>SPAN 클릭</span>
+            <h5 onClick={this.onButtonClick}>H5 클릭</h5>
+            <p onClick={this.onButtonClick}>P 클릭</p>
         </div>
     }
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 
 // 컴포넌트 방식 1
-export default class Day03A3 extends React.PureComponent {
+export default class Day03A3 extends React.Component {
     render() {
         let title = '';
         const islogin = 'Y';

@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export default class Day04A1 extends React.PureComponent {
+export default class Day04A1 extends React.Component {
     constructor(props) {
         console.log('constructor() =========>');
         super(props);

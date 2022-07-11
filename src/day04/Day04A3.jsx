@@ -1,26 +1,32 @@
 
 import React from 'react';
 
-export default class Day04A3 extends React.PureComponent {
+export default class Day04A3 extends React.Component {
     constructor(props) {
-        console.log('constructor() =========>');
         super(props);
-        this.state = { count: 0 };
+        this.state = { birthday: 2000 };
     }
     
-    componentDidMount() {
-        console.log('componentDidMount() =========>');
-        // setInterval(function, time) 함수는 두번째 파라메터의 시간 마다(ms) 
-        // 매번 주기적(time)으로 첫번째 함수를 호출하는 타이머 함수이다.
-        
-        // 즉, 1000ms(1초)마다 function(state의 카운트를 1씩 증가)하기위한 명령이다.
-        setInterval(() => {
-            this.setState({count: this.state.count + 1})
-        }, 1000);
+    // 함수를 만들때 주의할 점은 this 사용을 위해
+    // 반드시 화살표(=>) 함수를 이용해 함수를 만들어야 한다.
+    onChangeSelection = (event) => {
+        console.dir(event)
+        console.dir(event.target)
+        console.dir(event.target.value)
+        console.dir(this.state);
+        this.setState({birthday: event.target.value})
+
     }
 
     render() {
-        console.log('render() =========> ' + this.state.count);
-        return <div>카운트 : {this.state.count}</div>
+        return <div>
+            <h3>생년월일 : {this.state.birthday}</h3>
+            <select onChange={this.onChangeSelection} value={this.state.birthday}>
+                <option value={1999}>1999</option>
+                <option value={2000}>2000</option>
+                <option value={2001}>2001</option>
+                <option value={2010}>2010</option>
+            </select>
+        </div>
     }
 }

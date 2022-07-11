@@ -2,7 +2,7 @@
 import React from 'react';
 
 // 컴포넌트 방식
-export default class Day03A1 extends React.PureComponent {
+export default class Day03A1 extends React.Component {
     // DOM을 만들어 결과를 반환한다.
     render() {
         return (

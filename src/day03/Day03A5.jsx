@@ -2,7 +2,7 @@
 import React from 'react';
 
 // 컴포넌트 생명 주기 확인
-export default class Day03A5 extends React.PureComponent {
+export default class Day03A5 extends React.Component {
     constructor(props) {
         console.log("constructor() ==========> ");
         super(props);
