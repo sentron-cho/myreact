@@ -1,4 +1,4 @@
-export default function Home() {
+export default function About() {
     return (
         <div>
             <h3>About 화면입니다.</h3>

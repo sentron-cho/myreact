@@ -29,7 +29,7 @@ root.render(
     {/* <Day04A3 max="10" /> */}
     {/* <Day04A4 text="안녕하세요" /> */}
     {/* <Day04A5 value="mac" /> */}
-    <Day05 />
-    {/* <Day06 /> */}
+    {/* <Day05 /> */}
+    <Day06 />
   </React.StrictMode>
 );
