@@ -7,7 +7,7 @@ const calc = (v) => {
     return v + 10000;
 }
     
-export default function Day06A3(props) {
+export default function Day06A4(props) {
     const [count, setCount] = useState(props.value);
 
     // Day06A3이 렌더링되는 매번 호출되어 성능 문제가 발생한다.
