@@ -6,7 +6,7 @@ export default function Home(props) {
 
   const onLogin = () => {
     alert(userid + '(' + password + ')로 로그인하였습니다.')
-    window.location.href = '/home'
+    window.location.href = '/'
   }
 
   return (
