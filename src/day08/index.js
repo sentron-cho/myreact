@@ -1,19 +1,16 @@
 import { Link, Route, BrowserRouter, Routes } from 'react-router-dom'
 import Login from './Login'
 import Home from './Home'
-import About from './About'
-import NotFound from './NotFound'
 
-import './default.css'
+// import './default.css'
+import './style.scss'
 
-export default function Day07() {
+export default function Day08() {
   return (
     <BrowserRouter>
       {/* 헤더에서 네비게이션(메뉴)를 설정해야 한다. */}
       <header>
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/down">Down</Link>
         <Link to="/login">Login</Link>
       </header>
 
@@ -21,9 +18,7 @@ export default function Day07() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </BrowserRouter>
