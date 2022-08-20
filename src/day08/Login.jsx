@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Button from './Button'
 
 export default function Home(props) {
   const [userid, setUserid] = useState('')
@@ -23,9 +24,10 @@ export default function Home(props) {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="비밀번호"
       />
-      <button className="login-button" name="login" onClick={onLogin}>
-        로그인
-      </button>
+      <button className="login-button" name="login" onClick={onLogin}>로그인</button>
+      {/* <Button color="white" background='#aaaaaa' title="로그인" />
+      <Button color="black" background='white' title="로그인" />
+      <Button color="yello" background='red' title="로그인" /> */}
 
       <span>비밀번호를 잊으셨나요?</span>
       <div className="div-line"></div>

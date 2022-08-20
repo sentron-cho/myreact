@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SAMPLE_IMG from './images/sample_image.jpg'
 import CLOSE_IMG from './images/close.png'
+import Button from  './Button'
 
 export default function Home(props) {
   const [list, setList] = useState([
