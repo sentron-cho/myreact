@@ -16,7 +16,8 @@ import './index.css';
 // import Day05 from './day05/index';
 // import Day06 from './day06/index';
 // import Day07 from './day07/index';
-import Day08 from './day08/index';
+// import Day08 from './day08/index';
+import Facebook from './facebook/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -34,6 +35,7 @@ root.render(
     {/* <Day05 /> */}
     {/* <Day06 /> */}
     {/* <Day07 /> */}
-    <Day08 />
+    {/* <Day08 /> */}
+    <Facebook />
   </React.StrictMode>
 );
