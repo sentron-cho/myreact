@@ -85,7 +85,7 @@ export default function Regist(props) {
           </div>
           {/* 로그인 페이지 이동 */}
           <div className="login">
-            <a href="./01_facebook_index.html" aria-label="이미 계정이 있으신가요?">이미 계정이 있으신가요?</a>
+            <span onClick={() => window.location.href = "/login"} >이미 계정이 있으신가요?</span>
           </div>
         </div>
       </div>

@@ -18,14 +18,14 @@ export default function Login(props) {
               aria-label="비밀번호" />
           </div>
           <div>
-            <button className="login-button" value="1" name="login" onclick="login()">로그인</button>
+            <button className="login-button" value="1" name="login" onClick={() => window.location.href = "/"} >로그인</button>
           </div>
           <div>
             <a href="./03_facebook_identify.html">비밀번호를 잊으셨나요?</a>
           </div>
           <div className="div-line"></div>
           <div>
-            <a className="regist" href="./04_facebook_regist.html">새 계정 만들기</a>
+            <span className="regist" onClick={() => window.location.href = "/regist"}>새 계정 만들기</span>
           </div>
         </div>
         <div className="new-page">유명인, 브랜드 또는 비즈니스를 위한
