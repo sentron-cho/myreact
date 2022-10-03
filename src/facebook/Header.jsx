@@ -7,46 +7,80 @@ import PEOPLE_ICON from './images/people.png'
 import GAME_ICON from './images/game.png'
 import MENU_ICON from './images/menu.png'
 import ALARM_ICON from './images/alarm.png'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
-    return (
-      <div className="header">
-        <div class="head-logo">
-          <img src={FACEBOOK_ICON} alt="메인 로고 아이콘" />
-          <input placeholder="Facebook 검색" />
-        </div>
-        <div class="head-nav">
-          <nav class="">
-            <span class="btn-box active" onClick={() => window.location.href = "/"} >
-              <img src={HOME_ICON} alt="홈 바로가기" />
-              <span class="btn-line"></span>
-            </span>
-            <span class="btn-box" onClick={() => window.location.href = "/video"}>
-              <img src={YOUTUBE_ICON} alt="동영상 바로가기"/>
-              <span class="btn-line"></span>
-            </span>
-            <span class="btn-box" onClick={() => window.location.href = "/people"} >
-              <img src={PEOPLE_ICON} alt="사용자 바로가기" />
-              <span class="btn-line"></span>
-            </span>
-            <span class="btn-box" onClick={() => window.location.href = "/game"} >
-              <img src={GAME_ICON} alt="게임 바로가기" />
-              <span class="btn-line"></span>
-            </span>
-          </nav>
-        </div>
-        <div class="head-side">
-          <span class="btn-box">
-            <img src={MENU_ICON} alt="메뉴 바로가기" />
-          </span>
-          <span class="btn-box">
-            <img src={ALARM_ICON} alt="알림 바로가기" />
-          </span>
-          <span class="btn-box">
-            <img src={MORE_ICON} alt="더보기 바로가기" />
-          </span>
-        </div>
-      </div>
-    )
+  const [active, setActive] = useState('home')
+
+  useEffect(() => {
+    console.log(window.location.pathname)
+    const { pathname } = window.location
+
+    if(pathname === "/video") {
+      setActive('video')
+    } else if(pathname === "/people") {
+      setActive('people')
+    } else if(pathname === "/game") {
+      setActive('game')
+    } else {
+      setActive('home')
+    }
+  }, [])
+
+  const onClickHome = () => {
+    window.location.href = "/"
   }
+
+  const onClickVideo = () => {
+    window.location.href = "/video"
+  }
+
+  const onClickPeople = () => {
+    window.location.href = "/people"
+  }
+
+  const onClickGame = () => {
+    window.location.href = "/game"
+  }
+
+  return (
+    <div className="header">
+      <div class="head-logo">
+        <img src={FACEBOOK_ICON} alt="메인 로고 아이콘" />
+        <input placeholder="Facebook 검색" />
+      </div>
+      <div class="head-nav">
+        <nav class="">
+          <span class={`btn-box ${active === "home" ? 'active' : ''}`} onClick={onClickHome} >
+            <img src={HOME_ICON} alt="홈 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+          <span class={`btn-box ${active === "video" ? 'active' : ''}`} onClick={onClickVideo}>
+            <img src={YOUTUBE_ICON} alt="동영상 바로가기"/>
+            <span class="btn-line"></span>
+          </span>
+          <span class={`btn-box ${active === "people" ? 'active' : ''}`} onClick={onClickPeople} >
+            <img src={PEOPLE_ICON} alt="사용자 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+          <span class={`btn-box ${active === "game" ? 'active' : ''}`} onClick={onClickGame} >
+            <img src={GAME_ICON} alt="게임 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+        </nav>
+      </div>
+      <div class="head-side">
+        <span class="btn-box">
+          <img src={MENU_ICON} alt="메뉴 바로가기" />
+        </span>
+        <span class="btn-box">
+          <img src={ALARM_ICON} alt="알림 바로가기" />
+        </span>
+        <span class="btn-box">
+          <img src={MORE_ICON} alt="더보기 바로가기" />
+        </span>
+      </div>
+    </div>
+  )
+}
   
