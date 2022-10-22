@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import Header from './Header'
+import Menu from './Menu'
+
 import IMAGE_A from './images/game-a.jpg'
 import IMAGE_B from './images/game-b.jpg'
 import IMAGE_C from './images/game-c.jpg'
@@ -9,34 +12,41 @@ import IMAGE_2 from './images/game-2.jpg'
 import IMAGE_3 from './images/game-3.jpg'
 
 export default function Game(props) {
+  const [menu, setMenu] = useState(false);
+
+  const onClickMenu = (isshow) => {
+    setMenu(isshow)
+  }
+
   return (
     <>
-      <Header />
-      <section class="home-layer game-layer">
-        <ul class="list">
-          <li class="img-box left">
+      <Header onClick={() => onClickMenu(true)}/>
+      <Menu show={menu} onClick={() => onClickMenu(false)}/>
+      <section className="home-layer game-layer">
+        <ul className="list">
+          <li className="img-box left">
             <img src={IMAGE_A} alt="이미지"/>
           </li>
-          <li class="img-box center">
-            <button class="btn-prev"><img src={LEFT} alt="왼쪽"/></button>
+          <li className="img-box center">
+            <button className="btn-prev"><img src={LEFT} alt="왼쪽"/></button>
             <img src={IMAGE_B} alt="이미지"/>
-            <button class="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
+            <button className="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
           </li>
-          <li class="img-box right">
+          <li className="img-box right">
             <img src={IMAGE_C} alt="이미지"/>
           </li>
         </ul>
 
-        <div class="card">
-          <h3 class="title">추천게임</h3>
+        <div className="card">
+          <h3 className="title">추천게임</h3>
           <ul>
-            <li class="c-li"><img src={IMAGE_1} alt="이미지" /></li>
-            <li class="c-li"><img src={IMAGE_2} alt="이미지" /></li>
-            <li class="c-li"><img src={IMAGE_3} alt="이미지" /></li>
-            <li class="c-li"><img src={IMAGE_1} alt="이미지" /></li>
-            <li class="c-li"><img src={IMAGE_2} alt="이미지" /></li>
-            <li class="c-li"><img src={IMAGE_3} alt="이미지" /></li>
-            <button class="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
+            <li className="c-li"><img src={IMAGE_1} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_2} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_3} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_1} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_2} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_3} alt="이미지" /></li>
+            <button className="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
           </ul>
         </div>
       </section>

@@ -696,15 +696,13 @@ body {
   }
 }
 
-
 .game-layer {
-  // overflow: hidden;
   width: 100vw;
-  
+
   li {
     margin: 0;
   }
-  
+
   .list {
     position: relative;
     width: 100vw;
@@ -714,49 +712,50 @@ body {
     justify-content: center;
     padding: 10px 0;
     background-color: rgb(50, 50, 50);
+
+    .img-box {
+      position: relative;
+      height: 100%;
+      display: inline-block;
+      margin: 0 10px;
+
+      & > img {
+        height: 100%;
+        width: auto;
+        border-radius: 8px;
+      }
+
+      button {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: -35px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0;
+        z-index: 1;
+        opacity: 0.7;
+
+        &.btn-next {
+          left: unset;
+          right: -35px;
+        }
+
+        &::hover {
+          opacity: 0.9;
+          cursor: pointer;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }    
+    }
+    
   }
-  
-  .list .img-box {
-    position: relative;
-    height: 100%;
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  .list .img-box > img {
-    height: 100%;
-    width: auto;
-    border-radius: 8px;
-  }
-  
-  .list .img-box button {
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: -35px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    z-index: 1;
-    opacity: 0.7;
-  }
-  
-  .list .img-box button.btn-next {
-    left: unset;
-    right: -35px;
-  }
-  
-  .list .img-box button img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .list .img-box button:hover {
-    opacity: 0.9;
-    cursor: pointer;
-  }
-  
+
   .card {
     width: 900px;
     height: 200px;
@@ -767,54 +766,215 @@ body {
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 8px;
+    }
+
+    ul {
+      margin: 10px;
+      height: 140px;
+      display: inline-flex;
+
+      li {
+        width: 160px;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 5px;
+        margin-right: 10px;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      button {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-5px);
+        border: 0;
+        z-index: 1;
+        background-color: white;
+        opacity: 0.7;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        &::hover {
+          opacity: 0.9;
+          cursor: pointer;
+        }
+      }
+    }
   }
-  
-  .card .title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 8px;
-  }
-  
-  .card ul {
-    margin: 10px;
-    height: 140px;
-    display: inline-flex;
-  }
-  
-  .card ul li {
-    width: 160px;
-    height: 100%;
+}
+
+.menu-layer {
+  .menu {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: #f7f8fa;
+    z-index: 99;
+    width: 240px;
+    height: 100vh;
     overflow: hidden;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
+    transform: translateX(120%);
+
+    &.visible {
+      animation: slide-in 0.5s forwards;
+    }
   
-  .card ul li > img {
-    width: 100%;
-    height: 100%;
+    &.invisible {
+      animation: slide-out 0.5s forwards;
+    }
   }
-  
-  .card ul button {
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-5px);
-    border: 0;
-    z-index: 1;
-    background-color: white;
-    opacity: 0.7;
+
+  .box {
+    .head {
+      height: 60px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      border-bottom: 1px solid #dadada;
+      padding: 0 10px;
+
+      .icon {
+        height: 40px;
+        width: 40px;
+        margin-right: 16px;
+        border-radius: 40px;
+        background-color: #eaeaea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &::hover {
+          background-color: #dadada;
+        }
+      }
+
+      img {
+        height: 16px;
+      }
+    }
+
+    .body {
+      padding: 10px;
+
+      .myinfo {
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        padding: 4px;
+
+        .title {
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+          padding: 5px;
+
+          &::hover {
+            background-color: #e9e9e9;
+          }
+
+          img {
+            width: 30px;
+            border-radius: 30px;
+          }
+
+          .name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 10px;
+          }
+        }
+
+        .line {
+          background-color: rgb(200, 200, 200);
+          height: 1px;
+          width: 100%;
+          margin: 4px 0;
+        }
+
+        .subtitle {
+          font-size: 14px;
+          padding-top: 10px;
+          color: #1876f2;
+          border-radius: 5px;
+          padding: 5px;
+
+          &::hover {
+            background-color: #e9e9e9;
+          }
+        }
+      }
+
+      .list {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 20px;
+
+        ul li {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin: 5px 0;
+          cursor: pointer;
+          border-radius: 5px;
+
+          &::hover {
+            background-color: #e9e9e9;
+          }
+
+          .icon {
+            height: 34px;
+            width: 34px;
+            border-radius: 40px;
+            background-color: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+
+          span {
+            font-size: 14px;
+            margin-left: 10px;
+            line-height: 50px;
+            color: #505050;
+          }
+        }
+      }
+    }
   }
-  
-  .card ul button img {
-    width: 50px;
-    height: 50px;
+
+  /* show/hide and animation */
+  @keyframes slide-in {
+    100% {
+      transform: translateX(0%);
+    }
   }
-  
-  .card ul button:hover {
-    opacity: 0.9;
-    cursor: pointer;
+
+  @keyframes slide-out {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(120%);
+    }
   }
 }

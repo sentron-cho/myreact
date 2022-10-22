@@ -10,41 +10,41 @@ export default function Video(props) {
   return (
     <>
       <Header />
-      <section class="home-layer video-layer">
-          <ul class="list">
+      <section className="home-layer video-layer">
+          <ul className="list">
             <li>
-              <div class="card">
-                <div class="head">
+              <div className="card">
+                <div className="head">
                   <div>
-                    <img class="logo" src={EDU_ICON} alt="광고 아이콘" />
-                    <span class="title">에듀윌</span>
-                    <span class="time">8월 19일 오후 5:00</span>
-                    <img class="more" src={MORE_ICON} alt="더보기 메뉴"/>
+                    <img className="logo" src={EDU_ICON} alt="광고 아이콘" />
+                    <span className="title">에듀윌</span>
+                    <span className="time">8월 19일 오후 5:00</span>
+                    <img className="more" src={MORE_ICON} alt="더보기 메뉴"/>
                   </div>
-                  <div class="text">
+                  <div className="text">
                     <p>초시생 필수템, 만화입문서 무료배포! #합격자수1위 #에듀윌 #공인중개사</p>
                   </div>
                 </div>
-                <div class="body">
-                  <div class="image">
+                <div className="body">
+                  <div className="image">
                     <video src={VIDEO_SAMPLE} controls autoplay />
                   </div>
                 </div>
-                <div class="foot">
-                  <div class="left">
-                    <div class="btn-box active">
-                      <img src={HOME_ICON}alt="홈 바로가기" /><span class="btn-text">좋아요</span>
+                <div className="foot">
+                  <div className="left">
+                    <div className="btn-box active">
+                      <img src={HOME_ICON}alt="홈 바로가기" /><span className="btn-text">좋아요</span>
                     </div>
-                    <div class="btn-box">
-                      <img src={YOUTUBE_ICON} alt="동영상 바로가기" /><span class="btn-text">댓글 달기</span>
+                    <div className="btn-box">
+                      <img src={YOUTUBE_ICON} alt="동영상 바로가기" /><span className="btn-text">댓글 달기</span>
                     </div>
-                    <div class="btn-box">
-                      <img src={PEOPLE_ICON} alt="사용자 바로가기" /><span class="btn-text">공유 하기</span>
+                    <div className="btn-box">
+                      <img src={PEOPLE_ICON} alt="사용자 바로가기" /><span className="btn-text">공유 하기</span>
                     </div>
                   </div>
-                  <div class="right">
-                    <span class="text">댓글 17개,</span>
-                    <span class="text">조회 32만회</span>
+                  <div className="right">
+                    <span className="text">댓글 17개,</span>
+                    <span className="text">조회 32만회</span>
                   </div>
                 </div>
               </div>
