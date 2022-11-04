@@ -3,8 +3,11 @@ import REACT_NATIVE from './images/react_native.jpg'
 import PEOPLE_ICON from './images/people.png'
 import MENU_ICON from './images/menu.png'
 import HOME_ICON from './images/home.png'
+import { useState } from 'react'
 
 export default function People(props) {
+  const [active, setActive] = useState(1)
+
   return (
     <>
       <Header />
@@ -27,14 +30,13 @@ export default function People(props) {
           </div>
           <div className="t-navi">
             <div className="tr">
-              <span className='box active'><span className="title">정보</span><span className="line"></span></span>
-              <span className='box'><span className="title">토론</span><span className="line"></span></span>
-              <span className='box'><span className="title">추천</span><span className="line"></span></span>
-              <span className='box'><span className="title">주제</span><span className="line"></span></span>
-              <span className='box'><span className="title">사람</span><span className="line"></span></span>
-              <span className='box'><span className="title">이벤트</span><span className="line"></span></span>
-              <span className='box'><span className="title">미디어</span><span className="line"></span></span>
-              <span className='box'><span className="title">파일</span><span className="line"></span></span>
+              <LabelBox id={1} title="정보" active={active} onClick={(id) => setActive(id)}/>
+              <LabelBox id={2} title="토론" active={active} onClick={(id) => setActive(id)}/>
+              <LabelBox id={3} title="주제" active={active} onClick={(id) => setActive(id)}/>
+              <LabelBox id={4} title="사람" active={active} onClick={(id) => setActive(id)}/>
+              <LabelBox id={5} title="이벤트" active={active} onClick={(id) => setActive(id)}/>
+              <LabelBox id={6} title="미디어" active={active} onClick={(id) => setActive(id)}/>
+              <LabelBox id={7} title="파일" active={active} onClick={(id) => setActive(id)}/>
             </div>
             <div className="tl">
               <img src={HOME_ICON} alt="홈" />
@@ -46,5 +48,21 @@ export default function People(props) {
         </div>
       </section>
     </>
+  )
+}
+
+const LabelBox = (props) => {
+  const onClick = () => {
+    console.log(props.id)
+    props.onClick && props.onClick(props.id)
+  }
+
+  const active = props.active === props.id ? 'active' : ""
+  console.log(props.id, active)
+  return (
+    <span className={`box ${active}`} onClick={onClick}>
+      <span className="title">{props.title}</span>
+      <span className="line"></span>
+    </span>
   )
 }
