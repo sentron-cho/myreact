@@ -7,7 +7,7 @@ export default function Menu(props) {
   const [visible, setVisible] = useState(props.show)
 
   useEffect(() => {
-    if (props.show) {
+    if(props.show) {
       setVisible(props.show)
     }
   }, [props.show])
@@ -38,11 +38,36 @@ export default function Menu(props) {
               </div>
               <div className="list">
                 <ul>
-                  <MenuBox src={ALARM_ICON} title="설정 및 개인 정보" />
-                  <MenuBox src={ALARM_ICON} title="도움말 및 지원" />
-                  <MenuBox src={ALARM_ICON} title="디스플레이 및 접근성" />
-                  <MenuBox src={ALARM_ICON} title="의견 보내기" />
-                  <MenuBox src={ALARM_ICON} title="로그아웃" />
+                  <li>
+                    <span className="icon">
+                      <img src={ALARM_ICON} alt="알람" />
+                    </span>
+                    <span className="label">설정 및 개인 정보</span>
+                  </li>
+                  <li>
+                    <span className="icon">
+                      <img src={ALARM_ICON} alt="알람" />
+                    </span>
+                    <span className="label">도움말 및 지원</span>
+                  </li>
+                  <li>
+                    <span className="icon">
+                      <img src={ALARM_ICON} alt="알람" />
+                    </span>
+                    <span className="label">디스플레이 및 접근성</span>
+                  </li>
+                  <li>
+                    <span className="icon">
+                      <img src={ALARM_ICON} alt="알람" />
+                    </span>
+                    <span className="label">의견 보내기</span>
+                  </li>
+                  <li>
+                    <span className="icon">
+                      <img src={ALARM_ICON} alt="알람" />
+                    </span>
+                    <span className="label">로그아웃</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -50,16 +75,5 @@ export default function Menu(props) {
         </div>
       </section>
     </>
-  )
-}
-
-const MenuBox = (props) => {
-  return (
-    <li>
-      <span className="icon">
-        <img src={props.src} alt="알람" />
-      </span>
-      <span className="label">{props.title}</span>
-    </li>
   )
 }

@@ -25,15 +25,15 @@ export default function Game(props) {
       <section className="home-layer game-layer">
         <ul className="list">
           <li className="img-box left">
-            <ImageBox type="large" src={IMAGE_A} />
+            <img src={IMAGE_A} alt="이미지"/>
           </li>
           <li className="img-box center">
             <button className="btn-prev"><img src={LEFT} alt="왼쪽"/></button>
-            <ImageBox type="large" src={IMAGE_B} />
+            <img src={IMAGE_B} alt="이미지"/>
             <button className="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
           </li>
           <li className="img-box right">
-            <ImageBox type="large" src={IMAGE_C} />
+            <img src={IMAGE_C} alt="이미지"/>
           </li>
         </ul>
 
@@ -55,9 +55,5 @@ export default function Game(props) {
 }
 
 const ImageBox = (props) => {
-  if(props.type === "large") {
-    return (<img src={props.src} alt="이미지"/>)
-  } else {
-    return (<li className="c-li"><img src={props.src} alt="이미지" /></li>)
-  }
+  return (<li className="c-li"><img src={props.image} alt="이미지" /></li>)
 }

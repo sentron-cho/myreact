@@ -25,39 +25,31 @@ export default function Game(props) {
       <section className="home-layer game-layer">
         <ul className="list">
           <li className="img-box left">
-            <ImageBox type="large" src={IMAGE_A} />
+            <img src={IMAGE_A} alt="이미지"/>
           </li>
           <li className="img-box center">
             <button className="btn-prev"><img src={LEFT} alt="왼쪽"/></button>
-            <ImageBox type="large" src={IMAGE_B} />
+            <img src={IMAGE_B} alt="이미지"/>
             <button className="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
           </li>
           <li className="img-box right">
-            <ImageBox type="large" src={IMAGE_C} />
+            <img src={IMAGE_C} alt="이미지"/>
           </li>
         </ul>
 
         <div className="card">
           <h3 className="title">추천게임</h3>
           <ul>
-            <ImageBox src={IMAGE_1} />
-            <ImageBox src={IMAGE_2} />
-            <ImageBox src={IMAGE_3} />
-            <ImageBox src={IMAGE_1} />
-            <ImageBox src={IMAGE_2} />
-            <ImageBox src={IMAGE_3} />
+            <li className="c-li"><img src={IMAGE_1} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_2} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_3} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_1} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_2} alt="이미지" /></li>
+            <li className="c-li"><img src={IMAGE_3} alt="이미지" /></li>
             <button className="btn-next"><img src={RIGHT} alt="오른쪽"/></button>
           </ul>
         </div>
       </section>
     </>
   )
-}
-
-const ImageBox = (props) => {
-  if(props.type === "large") {
-    return (<img src={props.src} alt="이미지"/>)
-  } else {
-    return (<li className="c-li"><img src={props.src} alt="이미지" /></li>)
-  }
 }
